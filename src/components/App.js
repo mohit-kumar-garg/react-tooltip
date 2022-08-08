@@ -1,5 +1,7 @@
 import React from "react";
 
+import Tippy from "@tippyjs/react";
+
 import styles from "../assets/css/app.module.css";
 
 class App extends React.Component {
@@ -17,18 +19,32 @@ class App extends React.Component {
   render() {
     const { bgcolor, fontColor, content, position } = this.state;
 
+    const hoverStyle = {
+      color: fontColor,
+      backgroundColor: bgcolor,
+      padding: "5px",
+      borderRadius: "10px",
+      transition: "all 1s ease-in-out",
+    };
+
     return (
       <div className={styles.container}>
-        <button
-          onClick={() => {
-            console.log("Bgcolor: ", bgcolor);
-            console.log("fontColor: ", fontColor);
-            console.log("content: ", content);
-            console.log("position: ", position);
-          }}
+        <Tippy
+          content={<span style={hoverStyle}>{content}</span>}
+          placement={position}
         >
-          Hover Here to see Tooltip...
-        </button>
+          <button
+
+          // onClick={() => {
+          //   console.log("Bgcolor: ", bgcolor);
+          //   console.log("fontColor: ", fontColor);
+          //   console.log("content: ", content);
+          //   console.log("position: ", position);
+          // }}
+          >
+            Hover Here to see Tooltip...
+          </button>
+        </Tippy>
 
         <div className={styles.configurations}>
           <div>
@@ -81,7 +97,7 @@ class App extends React.Component {
             <input
               type="radio"
               name="position"
-              value="Top"
+              value="top"
               defaultChecked
               onClick={(e) => {
                 // console.log("New value is:", e.target.value);
@@ -95,7 +111,7 @@ class App extends React.Component {
             <input
               type="radio"
               name="position"
-              value="Bottom"
+              value="bottom"
               onClick={(e) => {
                 // console.log("New value is:", e.target.value);
                 this.setState({
@@ -108,7 +124,7 @@ class App extends React.Component {
             <input
               type="radio"
               name="position"
-              value="Left"
+              value="left"
               onClick={(e) => {
                 // console.log("New value is:", e.target.value);
                 this.setState({
@@ -121,7 +137,7 @@ class App extends React.Component {
             <input
               type="radio"
               name="position"
-              value="Right"
+              value="right"
               onClick={(e) => {
                 // console.log("New value is:", e.target.value);
                 this.setState({
