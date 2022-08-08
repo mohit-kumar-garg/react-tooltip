@@ -1,0 +1,48 @@
+.container {
+  /* border: 1px solid black; */
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px lightgrey;
+
+  width: 50%;
+  margin: auto;
+  margin-top: 100px;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  text-align: center;
+}
+
+.container button {
+  width: 90%;
+
+  margin: auto;
+
+  padding: 10px;
+
+  font-size: 1rem;
+}
+
+.configurations {
+  /* border: 1px solid black; */
+
+  width: 90%;
+
+  margin: auto;
+
+  padding: 10px;
+}
+
+.configurations div {
+  margin: 10px;
+
+  padding: 10px;
+}
+
+.content input {
+  font-size: 1.5rem;
+}
