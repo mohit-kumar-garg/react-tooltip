@@ -1,10 +1,12 @@
+/* This contains the style for the container which contains the button and other configurations options */
 .container {
-  /* border: 1px solid black; */
-
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px lightgrey;
 
   width: 50%;
+  max-width: 500px;
+  min-width: 200px;
+
   margin: auto;
   margin-top: 100px;
 
@@ -17,32 +19,48 @@
   text-align: center;
 }
 
+/* This contains the styling of the button where we need to hover to see tooltip */
 .container button {
   width: 90%;
 
-  margin: auto;
+  margin: 10px auto;
 
   padding: 10px;
 
   font-size: 1rem;
+
+  background-color: white;
+  border: none;
+  box-shadow: 0px 0px 10px 0px lightgrey;
+
+  overflow-wrap: break-word;
 }
 
+/* This contains the styling for the box which contains the options to configure tooltip styling */
 .configurations {
-  /* border: 1px solid black; */
-
+  box-shadow: 0px 0px 10px 0px lightgrey;
   width: 90%;
 
-  margin: auto;
+  margin: 10px auto;
 
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .configurations div {
-  margin: 10px;
+  width: 90%;
+  margin: 10px auto;
 
-  padding: 10px;
+  overflow-wrap: break-word;
 }
 
 .content input {
+  border: 1px solid lightgray;
+  width: 90%;
   font-size: 1.5rem;
+
+  overflow-wrap: break-word;
+
+  text-align: center;
 }

@@ -8,44 +8,38 @@ class App extends React.Component {
   constructor() {
     super();
 
+    // These valus are the default values which we will be using in our tooltip
     this.state = {
       bgcolor: "#000000",
       fontColor: "#ffffff",
-      content: "This is sample Tooltip",
+      content: "Enter Tooltip Content",
       position: "top",
     };
   }
 
   render() {
+    // Fetching the values from the state to be used in the different components
     const { bgcolor, fontColor, content, position } = this.state;
 
+    // This const contains multiple style attributes which we will be using in tooltip
     const hoverStyle = {
       color: fontColor,
       backgroundColor: bgcolor,
       padding: "5px",
       borderRadius: "10px",
-      transition: "all 1s ease-in-out",
     };
 
     return (
       <div className={styles.container}>
+        {/* Button where the tooltip will be visible on hover */}
         <Tippy
           content={<span style={hoverStyle}>{content}</span>}
           placement={position}
         >
-          <button
-
-          // onClick={() => {
-          //   console.log("Bgcolor: ", bgcolor);
-          //   console.log("fontColor: ", fontColor);
-          //   console.log("content: ", content);
-          //   console.log("position: ", position);
-          // }}
-          >
-            Hover Here to see Tooltip...
-          </button>
+          <button>Hover Here to see Tooltip...</button>
         </Tippy>
 
+        {/* Taking Dynamic values from the user to be used in Tooltip */}
         <div className={styles.configurations}>
           <div>
             <label htmlFor="bg-color">Choose Background Color of Tooltip</label>
@@ -54,7 +48,6 @@ class App extends React.Component {
               id="bg-color"
               value={bgcolor}
               onChange={(e) => {
-                // console.log("New value is:", e.target.value);
                 this.setState({
                   bgcolor: e.target.value,
                 });
@@ -69,7 +62,6 @@ class App extends React.Component {
               id="font-color"
               value={fontColor}
               onChange={(e) => {
-                // console.log("New value is:", e.target.value);
                 this.setState({
                   fontColor: e.target.value,
                 });
@@ -83,7 +75,6 @@ class App extends React.Component {
               placeholder="Enter content of Tooltip"
               value={content}
               onChange={(e) => {
-                // console.log("New value is:", e.target.value);
                 this.setState({
                   content: e.target.value,
                 });
@@ -100,7 +91,6 @@ class App extends React.Component {
               value="top"
               defaultChecked
               onClick={(e) => {
-                // console.log("New value is:", e.target.value);
                 this.setState({
                   position: e.target.value,
                 });
@@ -113,7 +103,6 @@ class App extends React.Component {
               name="position"
               value="bottom"
               onClick={(e) => {
-                // console.log("New value is:", e.target.value);
                 this.setState({
                   position: e.target.value,
                 });
@@ -126,7 +115,6 @@ class App extends React.Component {
               name="position"
               value="left"
               onClick={(e) => {
-                // console.log("New value is:", e.target.value);
                 this.setState({
                   position: e.target.value,
                 });
@@ -139,7 +127,6 @@ class App extends React.Component {
               name="position"
               value="right"
               onClick={(e) => {
-                // console.log("New value is:", e.target.value);
                 this.setState({
                   position: e.target.value,
                 });
